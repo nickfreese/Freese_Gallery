@@ -1,0 +1,382 @@
+/*
+* Gallery Placeholder Module
+*/
+& when (@media-common = true) {
+
+    .nf-gallery{
+    width:100%;
+    display:block;
+    position:relative;
+    box-sizing:border-box;
+    background:#ffffff;
+}
+.nf-gallery div{
+    width:100%;
+    display:inline-block;
+    position:relative;
+    box-sizing:border-box;
+}
+.nf-gallery .nf-view{
+    overflow-x: hidden;
+}
+.nf-gallery .nf-close{
+    position: absolute;
+    right: 0;
+    display: none;
+    top: 0;
+    width: auto;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 30px;
+    background: #e3e3e3;
+    color: #333333;
+    opacity: 0.5;
+    z-index: 1;
+    cursor:pointer;
+}
+.nf-gallery .nf-view-wrap{
+    position:relative;
+    overflow-x:hidden;
+    overflow-y: hidden;
+}
+.nf-gallery .nf-view-wrap .nf-view-inner{
+    left:0;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.nf-gallery .nf-view-wrap .nf-view-inner .nf-view-slide{
+    display:inline-block;
+    float:left;
+    position: relative;
+    overflow-y:hidden;
+}
+.nf-gallery .nf-view-wrap .nf-view-inner .nf-view-slide img{
+    top:50%;
+    left:50%;
+    -webkit-transform:translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    transform:translate3d(-50%,-50%,0);
+    position: absolute;
+    max-height:100%;
+}
+
+.nf-gallery .nf-view-wrap .nf-view-inner .nf-view-slide .nf-html-slide-wrapper{
+    top:50%;
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    position: absolute;
+    width:100%;
+}
+
+.nf-gallery .nf-thumb-inner{
+    width: auto;
+    margin: 0 auto;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+
+.nf-gallery .nf-thumb-slide{
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background:#e3e3e3;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.nf-gallery .nf-thumb-slide.nf-thumb{
+    width: 55px;
+    height: 55px;
+}
+
+.nf-gallery .nf-thumb{
+    text-align:center;
+    min-height:25px;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+/* arrows */
+
+.nf-gallery .nf-view-arrow{
+    top:50%;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    position: absolute;
+    z-index:1;
+    box-sizing:border-box;
+    width:auto;
+    cursor:pointer;
+}
+
+.nf-gallery .nf-view-arrow.nf-left{
+    -webkit-transform:translate3d(-100%,-50%,0);
+    -ms-transform: translate3d(-100%,-50%,0);
+    transform:translate3d(-100%,-50%,0);
+    left: 2px;
+}
+.nf-gallery .nf-view:hover .nf-view-arrow.nf-left{
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    
+}
+
+.nf-gallery .nf-view-arrow.nf-left:before{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    content: '\2770';
+    font-size: 2em;
+    color: #ffffffd1;
+    background: #e3e3e366;
+    box-sizing: border-box;
+    padding: 5px 16px;
+    opacity:0;
+}
+
+.nf-gallery .nf-view:hover .nf-view-arrow.nf-left:before{
+    opacity:100;
+}
+
+.nf-gallery .nf-view-arrow.nf-right{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform:translate3d(100%,-50%,0);
+    -ms-transform: translate3d(100%,-50%,0);
+    transform:translate3d(100%,-50%,0);
+    right: 2px;
+}
+.nf-gallery .nf-view:hover .nf-view-arrow.nf-right{
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    
+}
+
+.nf-gallery .nf-view-arrow.nf-right:before{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    content: '\2771';
+    font-size: 2em;
+    color: #ffffffd1;
+    background: #e3e3e366;
+    box-sizing: border-box;
+    padding: 5px 16px;
+    opacity:0;
+}
+.nf-gallery .nf-view:hover .nf-view-arrow.nf-right:before{
+    opacity:100;
+}
+
+/*
+* Thyumbnail arrows
+*/
+
+
+.nf-gallery .nf-thumb-arrow{
+    top:50%;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    position: absolute;
+    z-index:1;
+    box-sizing:border-box;
+    width:auto;
+    cursor:pointer;
+}
+
+
+.nf-gallery .nf-thumb-arrow.nf-left{
+    -webkit-transform:translate3d(-100%,-50%,0);
+    -ms-transform: translate3d(-100%,-50%,0);
+    transform:translate3d(-100%,-50%,0);
+    left: 2px;
+}
+.nf-gallery .nf-thumb:hover .nf-thumb-arrow.nf-left{
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    
+}
+
+.nf-gallery .nf-thumb-arrow.nf-left:before{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    content: '\2770';
+    font-size: 2em;
+    color: #ffffffd1;
+    background: #e3e3e366;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    opacity:0;
+}
+
+.nf-gallery .nf-thumb:hover .nf-thumb-arrow.nf-left:before{
+    opacity:100;
+}
+
+.nf-gallery .nf-thumb-arrow.nf-right{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform:translate3d(100%,-50%,0);
+    -ms-transform: translate3d(100%,-50%,0);
+    transform:translate3d(100%,-50%,0);
+    right: 2px;
+}
+.nf-gallery .nf-thumb:hover .nf-thumb-arrow.nf-right{
+    -webkit-transform:translate3d(0,-50%,0);
+    -ms-transform: translate3d(0,-50%,0);
+    transform:translate3d(0,-50%,0);
+    
+}
+
+.nf-gallery .nf-thumb-arrow.nf-right:before{
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    content: '\2771';
+    font-size: 2em;
+    color: #ffffffd1;
+    background: #e3e3e366;
+    box-sizing: border-box;
+    padding: 5px 8px;
+    opacity:0;
+}
+.nf-gallery .nf-thumb:hover .nf-thumb-arrow.nf-right:before{
+    opacity:100;
+}
+
+
+
+/*
+* Badges
+*/
+
+.nf-gallery .nf-badge {
+    position: absolute !important;
+    z-index: 1;
+    display: inline-block;
+    width: auto;
+}
+
+.nf-gallery .nf-badge.top-left{
+    top:0;
+    left:0;
+}
+.nf-gallery .nf-badge.top-right{
+    top:0;
+    right:0;
+}
+.nf-gallery .nf-badge.bottom-right{
+    bottom:0;
+    right:0;
+}
+.nf-gallery .nf-badge.bottom-left{
+    bottom:0;
+    left:0;
+}
+
+/* fullscreen */
+
+.nf-gallery.fullscreen{
+    width:100vw !important;
+    text-align:center;
+    position: fixed;
+    left: 0;
+    top:0;
+    padding:12px;
+    z-index:99999999;
+}
+.nf-gallery.fullscreen .nf-view{
+   /* width: -moz-calc(100vh - (100px));
+    width: -webkit-calc(100vh - (100px));
+    width: calc(100vh - (100px));*/
+}
+
+.nf-gallery.fullscreen .nf-view-wrap{
+    margin: 0 auto;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}
+
+.nf-gallery.fullscreen .nf-thumb-inner {
+    width: auto;
+    margin: 0 auto;
+    height: 100px;
+    overflow: scroll;
+}
+
+.nf-gallery.fullscreen .nf-close{
+    display:inline-block;
+}
+
+.nf-gallery.fullscreen .nf-view-wrap .nf-view-inner .nf-view-slide{
+        text-align: left;
+}
+
+.nf-gallery.fullscreen .nf-badge {
+    display:none;
+}
+
+.nf-gallery.fullscreen .nf-view-arrow.nf-left, .nf-gallery.fullscreen .nf-thumb-arrow.nf-left{
+    left:-2em;
+    display:none;
+} 
+.nf-gallery.fullscreen .nf-view-arrow.nf-right, .nf-gallery.fullscreen .nf-thumb-arrow.nf-right{
+    right:-2em;
+    display:none;
+}
+
+/*
+* Zoom
+*/
+.nf-gallery .nf-zoom-result {
+  display:hidden;
+  /*visibility: hidden;*/
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  top: 0px;
+  left: 100%;
+  position: absolute;
+  z-index:100;
+}
+
+.nf-gallery div.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  z-index:99;
+  /*set the size of the lens:*/
+  width: 150px;
+  height: 150px;
+  visibility:hidden;
+}
+
+.nf-gallery.fullScreen div.img-zoom-lens{
+    visibility:hidden;
+}
+
+}

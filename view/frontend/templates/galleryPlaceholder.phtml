@@ -1,0 +1,61 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product media data template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Gallery
+ */
+
+?>
+
+
+<div class='nf-gallery' style='width:100%'>
+   <div class='nf-close'>&#215;</div>
+    <div class='nf-view'>
+        <div class='nf-view-wrap'>
+            <div class='nf-view-inner'>
+                <div class='nf-view-slide' data-nf-slide="0" style="width:100%;padding-top: 100%;">
+                    <img src='<?php echo $block->getMainImage(); ?>' />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='nf-thumb'>
+        <div class='nf-thumb-inner'></div>
+    </div>
+</div>
+<script>
+require(['nfGallery'],function(nfGallery){
+
+var images = <?php echo json_encode($block->getNfImagesList()); ?>;
+
+var settings = <?php if($block->hasSettings()) { echo $block->getScopeConfig('nfgallery/general/settings'); } else {?>{
+    renderHtml: false,
+    height:400,
+    square: true,
+    nav: "thumbnails",
+    hasFastly: true,
+    arrows: true,
+    scrollThumbs: true
+}<?php } ?>;
+
+var target = ".nf-gallery";
+
+var badges = [];
+
+window.addEventListener('galleryloaded', function(e){
+e = e || window.e;
+console.log(e);
+});
+
+window.pdpMainGallery = nfGallery(images, target, settings, badges);
+
+
+});
+</script>

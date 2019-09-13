@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!--<tab id="general" translate="label" sortOrder="10">
+            <label>General</label>
+        </tab> -->
+        <section id="nfgallery" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>nfGallery</label>
+            <tab>general</tab>
+            <resource>Freese_Gallery::product_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="settings" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>nfGallery Settings</label>
+                    <comment>JSON object of settings</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
